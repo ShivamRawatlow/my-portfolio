@@ -106,11 +106,10 @@ main {
 .projects {
   display: grid;
   gap: 0.7rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   img {
-    width: 100%;
     border: 3px #fff solid;
-    width: 400px;
+    width: 60%;
     height: 250px;
 
     &:hover {
@@ -163,13 +162,13 @@ main {
   @extend .btn; //inheritence in sass
   background: darken($primary-color, 50);
   color: #fff;
-  width: 400px;
+  width: 60%;
 }
 .btn-light {
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;
-  width: 400px;
+  width: 60%;
 }
 
 #main-footer {

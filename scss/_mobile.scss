@@ -9,6 +9,16 @@
 @include mediaLg {
   .projects {
     grid-template-columns: repeat(2, 1fr);
+    img {
+      width: 80%;
+    }
+  }
+
+  .btn-dark {
+    width: 80%;
+  }
+  .btn-light {
+    width: 80%;
   }
 }
 
@@ -58,8 +68,18 @@
 
     grid-template-columns: 1fr;
   }
+
+  //Work Projects
   .projects {
-    grid-template-columns: repeat(2, 1fr);
+    img {
+      width: 90%;
+    }
+  }
+  .btn-dark {
+    width: 90%;
+  }
+  .btn-light {
+    width: 90%;
   }
 }
 
