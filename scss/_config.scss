@@ -1,11 +1,11 @@
 //this is a a "partial file"
 //partial starts with _config
 
-$primary-color: #444; //acts like variable
-$secondary-color: #eece1a;
+$primary-color: #1e3d59; //acts like variable
+$secondary-color: #ffee58;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
-$portrait-image: url(../img/portraitowl.jpg);
+$portrait-image: url(../img/portrait.jpg);
 $background-opacity: 0.9;
 
 @mixin easeOut {

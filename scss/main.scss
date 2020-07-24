@@ -78,9 +78,7 @@ main {
 .about-info {
   display: grid;
   gap: 30px; // grid-gab is obselete
-  grid-template-areas:
-    'bioimage bio bio'
-    'job1 job2 job3';
+  grid-template-areas: 'bioimage bio bio';
 
   grid-template-columns: 1fr 1fr 1fr;
 
@@ -96,32 +94,24 @@ main {
     grid-area: bio;
     font-size: 1.5rem;
   }
-
-  .job-1 {
-    grid-area: job1;
-  }
-  .job-2 {
-    grid-area: job2;
-  }
-  .job-3 {
-    grid-area: job3;
-  }
-
-  .job {
-    background: lighten($primary-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
-  }
+}
+.techstack {
+  margin-top: 40px;
+  background: lighten($primary-color, 5);
+  padding: 1rem;
+  width: 90%;
 }
 
 //Work Projects
 .projects {
   display: grid;
   gap: 0.7rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   img {
     width: 100%;
     border: 3px #fff solid;
+    width: 400px;
+    height: 250px;
 
     &:hover {
       opacity: 0.5;
@@ -173,11 +163,13 @@ main {
   @extend .btn; //inheritence in sass
   background: darken($primary-color, 50);
   color: #fff;
+  width: 400px;
 }
 .btn-light {
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;
+  width: 400px;
 }
 
 #main-footer {
