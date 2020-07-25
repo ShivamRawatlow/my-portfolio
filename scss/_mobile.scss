@@ -72,14 +72,25 @@
   //Work Projects
   .projects {
     img {
-      width: 90%;
+      width: 100%;
     }
   }
   .btn-dark {
-    width: 90%;
+    width: 100%;
   }
   .btn-light {
-    width: 90%;
+    width: 100%;
+  }
+
+  .boxes {
+    div {
+      font-size: 1.2rem;
+    }
+  }
+
+  .threefacts {
+    text-align: left;
+   // list-style-type: none;
   }
 }
 
