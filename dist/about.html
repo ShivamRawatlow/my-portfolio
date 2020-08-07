@@ -11,33 +11,7 @@
     <title>About Me</title>
   </head>
   <body>
-    <header>
-      <div class="menu-btn">
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-        <div class="btn-line"></div>
-      </div>
-      <nav class="menu">
-        <div class="menu-branding">
-          <div class="portrait"></div>
-        </div>
-        <ul class="menu-nav">
-          <li class="nav-item">
-            <a href="./" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item current">
-            <a href="about.html" class="nav-link">About Me</a>
-          </li>
-          <li class="nav-item">
-            <a href="work.html" class="nav-link">My Work</a>
-          </li>
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact Me</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
+    <header id="common-menu"></header>
     <main id="about">
       <h1 class="lg-heading">About <span class="text-secondary"> Me</span></h1>
       <h2 class="sm-heading">Let me tell you a few things...</h2>
@@ -47,11 +21,10 @@
           <h3 class="text-secondary">three random facts about me...</h3>
           <ul class="threefacts">
             <li class="text-primary">
-              If I'm not coding, then I'm either playing badminton or playing
-              guitar
+              I prefer green tea over coffee
             </li>
             <li class="text-primary">
-              Favourite Quote - "one must imagine sisyphus happy"
+              Favourite Quote - "one must imagine sisyphus happy".
             </li>
             <li class="text-primary">Big fan of Neil Degrasse Tyson</li>
           </ul>
@@ -100,6 +73,11 @@
     <footer id="main-footer">
       “Knowing yourself is the beginning of all wisdom.”</footer>
 
+      <script
+      id="selectedClass"
+      selectedClass="aboutMe"
+      src="./js/menu.js"
+    ></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
