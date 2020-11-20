@@ -185,6 +185,9 @@ main {
   padding: 1rem;
   width: 100%;
   text-align: center; }
+  .techstack .stackitem {
+    margin-left: 30px;
+    margin-right: 30px; }
 
 .projects {
   display: grid;
@@ -220,6 +223,8 @@ main {
 
 .btn, .btn-dark, .btn-light {
   display: block;
+  text-align: center;
+  align-items: center;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem; }
@@ -299,10 +304,16 @@ main {
   .boxes div {
     font-size: 1.2rem; }
   .threefacts {
-    text-align: left; } }
+    text-align: left; }
+  .techstack .stackitem {
+    margin-left: 10px;
+    margin-right: 10px; } }
 
 @media screen and (max-width: 500px) {
   main#home h1 {
     margin-top: 10vh; }
   .projects {
-    grid-template-columns: repeat(1, 1fr); } }
+    grid-template-columns: repeat(1, 1fr); }
+  .techstack .stackitem {
+    margin-left: 10px;
+    margin-right: 10px; } }
