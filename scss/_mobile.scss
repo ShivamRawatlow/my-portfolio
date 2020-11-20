@@ -93,6 +93,13 @@
     text-align: left;
     // list-style-type: none;
   }
+
+  .techstack {
+    .stackitem {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
 }
 
 //Mobiles
@@ -102,5 +109,12 @@
   }
   .projects {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .techstack {
+    .stackitem {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
   }
 }
