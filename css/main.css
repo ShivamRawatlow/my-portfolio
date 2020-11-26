@@ -128,10 +128,12 @@ h3 {
   h1.lg-heading,
   h2.lg-heading,
   h3.lg-heading {
+    text-align: center;
     font-size: 6rem; }
   h1.sm-heading,
   h2.sm-heading,
   h3.sm-heading {
+    text-align: center;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(33, 66, 97, 0.5); }
@@ -192,55 +194,51 @@ main {
 .projects {
   display: grid;
   gap: 0.7rem;
-  grid-template-columns: repeat(2, 1fr); }
-  .projects img {
-    border: 3px #fff solid;
-    width: 60%;
-    height: 250px; }
-    .projects img:hover {
-      opacity: 0.5;
-      border-color: #ffee58;
-      transition: all 0.5s ease-out; }
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center; }
+  .projects .item {
+    width: 60%; }
+    .projects .item img {
+      width: 100%;
+      height: 250px;
+      border: 3px #fff solid; }
+      .projects .item img:hover {
+        opacity: 0.5;
+        border-color: #ffee58;
+        transition: all 0.5s ease-out; }
+    .projects .item .btn, .projects .item .btn-dark, .projects .item .btn-light {
+      display: block;
+      text-align: center;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border: 0;
+      margin-bottom: 0.3rem; }
+      .projects .item .btn:hover, .projects .item .btn-dark:hover, .projects .item .btn-light:hover {
+        background: #ffee58;
+        color: #000; }
+    .projects .item .btn-dark {
+      background: black;
+      color: #fff; }
+    .projects .item .btn-light {
+      background: #99bddd;
+      color: #333; }
 
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem; }
+  display: block;
+  margin-top: 1rem;
+  text-align: center; }
   .boxes div {
+    margin: auto;
+    width: 70%;
     font-size: 2rem;
-    border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
-    margin-bottom: 3rem;
-    transition: all 0.5s ease-out; }
+    margin-bottom: 3rem; }
     .boxes div:hover {
-      padding: 1.5rem 1.5rem;
       background: #ffee58;
       color: #000; }
       .boxes div:hover span {
         color: #000; }
-
-.btn, .btn-dark, .btn-light {
-  display: block;
-  text-align: center;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #ffee58;
-    color: #000; }
-
-.btn-dark {
-  background: black;
-  color: #fff;
-  width: 60%; }
-
-.btn-light {
-  background: #99bddd;
-  color: #333;
-  width: 60%; }
 
 #main-footer {
   text-align: center;
@@ -249,19 +247,9 @@ main {
   color: #fff;
   width: 100%; }
 
-@media screen and (min-width: 1171px) {
-  .projects {
-    grid-template-columns: repeat(2, 1fr); } }
-
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  .projects {
-    grid-template-columns: repeat(2, 1fr); }
-    .projects img {
-      width: 80%; }
-  .btn-dark {
-    width: 80%; }
-  .btn-light {
-    width: 80%; } }
+  .projects .item {
+    width: 70%; } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -295,14 +283,12 @@ main {
   .about-info {
     grid-template-areas: 'bioimage' 'bio';
     grid-template-columns: 1fr; }
-  .projects img {
-    width: 100%; }
-  .btn-dark {
-    width: 100%; }
-  .btn-light {
+  .projects .item {
     width: 100%; }
   .boxes div {
-    font-size: 1.2rem; }
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1.5rem 0; }
   .threefacts {
     text-align: left; }
   .techstack .stackitem {
