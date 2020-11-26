@@ -24,9 +24,11 @@ h3 {
 
   &.lg-heading {
     // similar to h1.lg-heading
+    text-align: center;
     font-size: 6rem;
   }
   &.sm-heading {
+    text-align: center;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(lighten($primary-color, 2), 0.5);
@@ -69,7 +71,7 @@ main {
   &#home {
     overflow: hidden; //to not have scrollbar
     h1 {
-      margin-top: 20vh; //vh means viewport height 20 out of 100
+      margin-top: 20vh;
     }
   }
 }
@@ -109,40 +111,64 @@ main {
 
 //Work Projects
 .projects {
-  
   display: grid;
   gap: 0.7rem;
-  grid-template-columns: repeat(2, 1fr);
-  img {
-    border: 3px #fff solid;
-    width: 60%;
-    height: 250px;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
 
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
+  .item {
+    width: 60%;
+    img {
+      width: 100%;
+      height: 250px;
+      border: 3px #fff solid;
+      &:hover {
+        opacity: 0.5;
+        border-color: $secondary-color;
+        @include easeOut;
+      }
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border: 0;
+      margin-bottom: 0.3rem;
+      &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+      }
+    }
+
+    .btn-dark {
+      @extend .btn; //inheritence in sass
+      background: darken($primary-color, 50);
+      color: #fff;
+    }
+    .btn-light {
+      @extend .btn;
+      background: lighten($primary-color, 50);
+      color: #333;
     }
   }
 }
 
 //Contact Page
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
+  display: block;
   margin-top: 1rem;
+  text-align: center;
 
   div {
+    margin: auto;
+    width: 70%;
     font-size: 2rem;
-    border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
-    @include easeOut;
-
     &:hover {
-      padding: 1.5rem 1.5rem;
       background: $secondary-color;
       color: set-text-color($secondary-color);
       span {
@@ -150,33 +176,6 @@ main {
       }
     }
   }
-}
-
-//Button Styles in My Work
-.btn {
-  display: block;
-  text-align: center;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  border: 0;
-  margin-bottom: 0.3rem;
-  &:hover {
-    background: $secondary-color;
-    color: set-text-color($secondary-color);
-  }
-}
-
-.btn-dark {
-  @extend .btn; //inheritence in sass
-  background: darken($primary-color, 50);
-  color: #fff;
-  width: 60%;
-}
-.btn-light {
-  @extend .btn;
-  background: lighten($primary-color, 50);
-  color: #333;
-  width: 60%;
 }
 
 #main-footer {
