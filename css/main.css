@@ -234,11 +234,6 @@ main {
     font-size: 2rem;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem; }
-    .boxes div:hover {
-      background: #ffee58;
-      color: #000; }
-      .boxes div:hover span {
-        color: #000; }
 
 #main-footer {
   text-align: center;
