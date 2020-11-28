@@ -168,13 +168,6 @@ main {
     font-size: 2rem;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
-    &:hover {
-      background: $secondary-color;
-      color: set-text-color($secondary-color);
-      span {
-        color: set-text-color($secondary-color);
-      }
-    }
   }
 }
 
