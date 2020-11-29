@@ -124,8 +124,125 @@
 }
 
 //Delay each nav item slide by 0.1s
-@for $x from 1 through 5 {
+@for $x from 1 through 4 {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
   }
 }
+
+////////////new ///////////////////////////////////
+
+// nav {
+//   height: 10vh;
+//   background-color: lightblue;
+// }
+
+// .nav-links {
+//   display: flex;
+//   list-style: none;
+//   width: 50%;
+//   height: 100%;
+//   justify-content: space-around;
+//   align-items: center;
+//   margin-left: auto;
+// }
+// /* .landing {
+//   height: 90vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// } */
+
+// .nav-links li a {
+//   color: white;
+//   text-decoration: none;
+//   font-size: 16px;
+// }
+
+// @media screen and (max-width: 768px) {
+//   .btn-line {
+//     width: 30px;
+//     height: 3px;
+//     background: white;
+//     margin: 5px;
+//   }
+//   nav {
+//     position: relative;
+//   }
+
+//   .menu-btn {
+//     position: absolute;
+//     cursor: pointer;
+//     right: 5%;
+//     top: 50%;
+//     transform: translate(-5%, -50%);
+//     z-index: 2;
+//   }
+
+//   .nav-links {
+//     position: fixed;
+//     background: lightblue;
+//     height: 100vh;
+//     width: 100%;
+//     flex-direction: column;
+//     clip-path: circle(100px at 90% -10%);
+//     -webkit-clip-path: circle(100px at 90% -10%);
+//     transition: all 1s ease-out;
+//     pointer-events: none;
+//   }
+
+//   .nav-links.open {
+//     clip-path: circle(100px at 90% -10%);
+//     -webkit-clip-path: circle(1000px at 90% -10%);
+//     pointer-events: all;
+//   }
+//   /* .landing {
+//     flex-direction: column;
+//   } */
+//   .nav-links li {
+//     opacity: 0;
+//   }
+//   .nav-links li a {
+//     font-size: 25px;
+//   }
+//   .nav-links li:nth-child(1) {
+//     transition: all 0.5s ease 0.2s;
+//   }
+//   .nav-links li:nth-child(2) {
+//     transition: all 0.5s ease 0.4s;
+//   }
+//   .nav-links li:nth-child(3) {
+//     transition: all 0.5s ease 0.6s;
+//   }
+//   .nav-links li:nth-child(4) {
+//     transition: all 0.5s ease 0.8s;
+//   }
+//   .nav-links li.fade {
+//     opacity: 1;
+//   }
+// }
+
+// <nav>
+// <div class="menu-btn">
+//   <div class="btn-line"></div>
+//   <div class="btn-line"></div>
+//   <div class="btn-line"></div>
+// </div>
+// <div class="menu-branding">
+//   <div class="portrait"></div>
+// </div>
+// <ul class="nav-links">
+//   <li class="nav-item">
+//     <a href="./" class="nav-link">Home</a>
+//   </li>
+//   <li class="nav-item">
+//     <a href="about.html" class="nav-link">About Me</a>
+//   </li>
+//   <li class="nav-item">
+//     <a href="work.html" class="nav-link">My Work</a>
+//   </li>
+//   <li class="nav-item">
+//     <a href="contact.html" class="nav-link">Contact Me</a>
+//   </li>
+// </ul>
+// </nav>

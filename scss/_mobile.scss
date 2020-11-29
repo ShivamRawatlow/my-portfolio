@@ -14,6 +14,7 @@
 //Tablets
 @include mediaMd {
   main {
+    padding: 3rem;
     align-items: center;
     text-align: center;
     .lg-heading {
@@ -89,6 +90,9 @@
 
 //Mobiles
 @include mediaSm {
+  main {
+    padding: 1rem;
+  }
   main#home h1 {
     margin-top: 10vh;
   }
@@ -102,3 +106,4 @@
     }
   }
 }
+
