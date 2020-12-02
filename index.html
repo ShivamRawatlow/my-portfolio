@@ -9,19 +9,22 @@
     ></script>
     <link rel="stylesheet" href="css/main.css" />
     <!-- <link rel="stylesheet" href="css/navcss.css" /> -->
+    <!-- <link rel="stylesheet" href="css/menu.css" /> -->
     <title>Welcome to my portfolio</title>
   </head>
   <body id="bg-img">
-    <header id="common-menu"></header>
-    <section class="landing">
+    <!-- <header id="common-menu"></header> -->
+    <div class="menu-wrap">
+      <input type="checkbox" class="toggler" />
+      <div class="hamburger"><div></div></div>
+      <div class="new-menu"></div>
+    </div>
 
-    </section>
-      <main id="home">
-      <h1 class="lg-heading">
-        Shivam Rawat
-      </h1>
+    <section class="landing"></section>
+    <main id="home">
+      <h1 class="lg-heading">Shivam Rawat</h1>
       <h2 class="sm-heading">Web Developer</h2>
-      <div style="text-align: center;" class="icons">
+      <div style="text-align: center" class="icons">
         <a href="https://twitter.com/ShivamR48660992" target="_blank">
           <i class="fab fa-twitter fa-2x"></i>
         </a>
@@ -31,7 +34,10 @@
         <a href="https://github.com/ShivamRawatlow" target="_blank">
           <i class="fab fa-github fa-2x"></i>
         </a>
-        <a href="https://www.youtube.com/channel/UCcvxoy9d1gOzbZceoAX7MCw?view_as=subscriber" target="_blank">
+        <a
+          href="https://www.youtube.com/channel/UCcvxoy9d1gOzbZceoAX7MCw?view_as=subscriber"
+          target="_blank"
+        >
           <i class="fab fa-youtube fa-2x"></i>
         </a>
         <!-- <a
@@ -43,7 +49,6 @@
       </div>
     </main>
     <script id="selectedClass" selectedClass="home" src="./js/menu.js"></script>
-    <script src="./js/main.js"></script> 
-    <!-- <script src="./js/nav.js"></script> -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
