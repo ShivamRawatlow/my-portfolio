@@ -1,5 +1,6 @@
 @import './config';
-@import './menu';
+// @import './menu';
+@import './newmenu';
 
 * {
   box-sizing: border-box;
@@ -194,12 +195,6 @@ main {
     margin-bottom: 3rem;
   }
 }
-
-
-
-
-
-
 
 #main-footer {
   text-align: center;
