@@ -46,8 +46,12 @@
     z-index: 3;
     width: 4rem;
     height: 4rem;
-    padding: 1rem;
-    background: darken($primary-color, 8);
+    //padding: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    // padding-top: 1;
+    // padding-bottom: 1;
+    //background: darken($primary-color, 8);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,7 +59,7 @@
     & > div {
       position: relative;
       width: 100%;
-      height: 2px;
+      height: 3px;
       background-color: white;
       display: flex;
       align-items: center;
@@ -69,7 +73,7 @@
         z-index: 3;
         top: -10px;
         width: 100%;
-        height: 2px;
+        height: 3px;
         background: inherit;
       }
       &:after {
