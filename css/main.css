@@ -7,8 +7,9 @@
     position: fixed;
     z-index: 4;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
     opacity: 0;
     /* Toggler Animate */
     /* Rotate on hover when checked */ }
@@ -202,7 +203,7 @@ main {
   align-items: center;
   justify-items: center; }
   .projects .item {
-    width: 60%; }
+    width: 75%; }
     .projects .item .container {
       position: relative; }
       .projects .item .container .overlay {
@@ -262,10 +263,6 @@ main {
   background: #112333;
   color: #fff;
   width: 100%; }
-
-@media screen and (min-width: 769px) and (max-width: 1170px) {
-  .projects .item {
-    width: 70%; } }
 
 @media screen and (max-width: 768px) {
   main {
