@@ -11,7 +11,7 @@ $background-opacity: 0.9;
 @mixin easeOut {
   transition: all 0.5s ease-out;
 }
-
+//changes
 @mixin background {
   @if $show-home-image {
     &#bg-img {
@@ -46,7 +46,7 @@ $background-opacity: 0.9;
 //Media query mixins
 @mixin mediaSm {
   @media screen and (max-width: 500px) {
-    @content;                                                                           
+    @content;
   }
 }
 @mixin mediaMd {
