@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://ShivamRawatlow.githun.io/my-portfolio",
+  "homepage": "https://ShivamRawatlow.github.io/my-portfolio",
   "scripts": {
     "sass": "node-sass scss/ -o dist/css/",
     "deploy": "gh-pages -d dist"
