@@ -1,248 +1,139 @@
-.menu-btn {
-  position: absolute;
+@use './config';
+
+.menu-wrap {
+  position: relative;
   z-index: 3;
-  right: 35px;
-  top: 35px;
-  cursor: pointer;
-  @include easeOut;
 
-  .btn-line {
-    width: 28px;
-    height: 3px;
-    margin: 0 0 5px 0;
-    background: set-text-color($primary-color);
-    @include easeOut;
-  }
+  .toggler {
+    right: 1rem;
+    top: 1rem;
+    position: fixed;
+    z-index: 4;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+    opacity: 0;
 
-  //Rotate menu lines
-  &.close {
-    transform: rotate(180deg);
-    .btn-line {
-      // Line 1 - Rotate
-      &:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-      }
+    &:checked ~ .new-menu {
+      visibility: visible;
+    }
 
-      // Line 2 - hide
-      &:nth-child(2) {
-        opacity: 0;
-      }
+    &:checked ~ .new-menu > div {
+      transform: scale(1);
+      transition-duration: 0.75s;
+      opacity: 1;
+    }
 
-      // Line 3 - Rotate
-      &:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
+    /* Toggler Animate */
+    &:checked + .hamburger > div {
+      transform: rotate(135deg);
+
+      /* Turn lines into X */
+      &:before,
+      &:after {
+        top: 0;
+        transform: rotate(90deg);
       }
     }
+    /* Rotate on hover when checked */
+    &:checked:hover + .hamburger > div {
+      transform: rotate(225deg);
+    }
   }
-}
 
-//Menu Overlay
-.menu {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  opacity: 0.95;
-  visibility: hidden;
-
-  &.show {
-    visibility: visible;
-  }
-  &-branding,  //equivalent to menu-branding class & is replaced by menu
-  &-nav {
+  .hamburger {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 3;
+    width: 4rem;
+    height: 4rem;
+    // background: darken($primary-color, 8);
+    padding-right: 1rem;
+    padding-left: 1rem;
     display: flex;
-    flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    float: left;
-    width: 50%;
-    height: 100vh;
-    overflow: hidden; //hides the scrollbar
-  }
 
-  &-nav {
-    margin: 0;
-    padding: 0;
-    background: darken($primary-color, 5);
-    list-style: none;
-    transform: translate3d(0, -100%, 0); //to hide by default
-    @include easeOut;
-    &.show {
-      //slide in from top
-      transform: translate3d(0, 0, 0);
+    & > div {
+      position: relative;
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 3;
+        top: -10px;
+        width: 100%;
+        height: 3px;
+        background: inherit;
+      }
+      &:after {
+        top: 10px;
+      }
     }
   }
 
-  //Branding Side
-  &-branding {
-    background: $primary-color;
-    transform: translate3d(0, 100%, 0);
-    @include easeOut;
+  .new-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.95;
 
-    &.show {
-      //Slide in from bottom
-      transform: translate3d(0, 0, 0);
-    }
-
-    .portrait {
-      width: 250px;
-      height: 250px;
-      background: $portrait-image;
-      background-size: cover; // resize the image
-      background-position: center; //center the image
+    & > div {
+      background: darken(config.$primary-color, 8);
       border-radius: 50%;
-      border: solid 3px $secondary-color;
-    }
-  }
+      width: 150vw;
+      height: 150vw;
+      display: flex;
+      flex: none;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0);
+      transition: all 0.4s ease;
+      text-align: center;
 
-  .nav-item {
-    transform: translate3d(600px, 0, 0);
-    @include easeOut;
-    &.show {
-      //slide in from right
-      transform: translate3d(0, 0, 0);
-    }
-    &.current > a {
-      color: $secondary-color;
-    }
-  }
+      & > ul {
+        padding: 0;
+      }
 
-  .nav-link {
-    display: inline-block;
-    position: relative;
-    font-size: 30px;
-    text-transform: uppercase;
-    padding: 1rem 0;
-    font-weight: 300;
-    color: set-text-color($primary-color);
-    text-decoration: none;
-    @include easeOut;
+      & > ul > li {
+        list-style: none;
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 1rem;
 
-    &:hover {
-      color: $secondary-color;
+        .nav-link {
+          display: inline-block;
+          font-size: 30px;
+          text-transform: uppercase;
+          padding: 1rem 0;
+          font-weight: 300;
+          color: config.set-text-color(config.$primary-color);
+          text-decoration: none;
+
+          &:hover {
+            color: config.$secondary-color;
+          }
+        }
+
+        &.current > a {
+          color: config.$secondary-color;
+        }
+      }
     }
   }
 }
-
-//Delay each nav item slide by 0.1s
-@for $x from 1 through 4 {
-  .nav-item:nth-child(#{$x}) {
-    transition-delay: $x * 0.1s;
-  }
-}
-
-////////////new ///////////////////////////////////
-
-// nav {
-//   height: 10vh;
-//   background-color: lightblue;
-// }
-
-// .nav-links {
-//   display: flex;
-//   list-style: none;
-//   width: 50%;
-//   height: 100%;
-//   justify-content: space-around;
-//   align-items: center;
-//   margin-left: auto;
-// }
-// /* .landing {
-//   height: 90vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// } */
-
-// .nav-links li a {
-//   color: white;
-//   text-decoration: none;
-//   font-size: 16px;
-// }
-
-// @media screen and (max-width: 768px) {
-//   .btn-line {
-//     width: 30px;
-//     height: 3px;
-//     background: white;
-//     margin: 5px;
-//   }
-//   nav {
-//     position: relative;
-//   }
-
-//   .menu-btn {
-//     position: absolute;
-//     cursor: pointer;
-//     right: 5%;
-//     top: 50%;
-//     transform: translate(-5%, -50%);
-//     z-index: 2;
-//   }
-
-//   .nav-links {
-//     position: fixed;
-//     background: lightblue;
-//     height: 100vh;
-//     width: 100%;
-//     flex-direction: column;
-//     clip-path: circle(100px at 90% -10%);
-//     -webkit-clip-path: circle(100px at 90% -10%);
-//     transition: all 1s ease-out;
-//     pointer-events: none;
-//   }
-
-//   .nav-links.open {
-//     clip-path: circle(100px at 90% -10%);
-//     -webkit-clip-path: circle(1000px at 90% -10%);
-//     pointer-events: all;
-//   }
-//   /* .landing {
-//     flex-direction: column;
-//   } */
-//   .nav-links li {
-//     opacity: 0;
-//   }
-//   .nav-links li a {
-//     font-size: 25px;
-//   }
-//   .nav-links li:nth-child(1) {
-//     transition: all 0.5s ease 0.2s;
-//   }
-//   .nav-links li:nth-child(2) {
-//     transition: all 0.5s ease 0.4s;
-//   }
-//   .nav-links li:nth-child(3) {
-//     transition: all 0.5s ease 0.6s;
-//   }
-//   .nav-links li:nth-child(4) {
-//     transition: all 0.5s ease 0.8s;
-//   }
-//   .nav-links li.fade {
-//     opacity: 1;
-//   }
-// }
-
-// <nav>
-// <div class="menu-btn">
-//   <div class="btn-line"></div>
-//   <div class="btn-line"></div>
-//   <div class="btn-line"></div>
-// </div>
-// <div class="menu-branding">
-//   <div class="portrait"></div>
-// </div>
-// <ul class="nav-links">
-//   <li class="nav-item">
-//     <a href="./" class="nav-link">Home</a>
-//   </li>
-//   <li class="nav-item">
-//     <a href="about.html" class="nav-link">About Me</a>
-//   </li>
-//   <li class="nav-item">
-//     <a href="work.html" class="nav-link">My Work</a>
-//   </li>
-//   <li class="nav-item">
-//     <a href="contact.html" class="nav-link">Contact Me</a>
-//   </li>
-// </ul>
-// </nav>

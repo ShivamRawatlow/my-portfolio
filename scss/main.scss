@@ -1,15 +1,15 @@
-@import './config';
-// @import './menu';
-@import './newmenu';
+@use './config';
+@use './menu';
+@use './mobile';
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  @include background;
-  background: $primary-color;
-  color: set-text-color($primary-color); // custom function
+  @include config.background;
+  background: config.$primary-color;
+  color: config.set-text-color(config.$primary-color); // custom function
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,7 +32,7 @@ h3 {
     text-align: center;
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    background: rgba(lighten(config.$primary-color, 2), 0.5);
   }
 }
 
@@ -48,7 +48,7 @@ header {
 }
 
 .text-secondary {
-  color: $secondary-color;
+  color: config.$secondary-color;
 }
 
 main {
@@ -61,9 +61,8 @@ main {
       padding: 0.4rem;
 
       &:hover {
-        // equal to a:hover
-        color: $secondary-color;
-        @include easeOut();
+        color: config.$secondary-color;
+        @include config.easeOut();
       }
     }
   }
@@ -90,7 +89,7 @@ main {
     height: 250px;
     margin: auto;
     border-radius: 50%;
-    border: $secondary-color 3px solid;
+    border: config.$secondary-color 3px solid;
   }
   .bio {
     grid-area: bio;
@@ -99,7 +98,7 @@ main {
 }
 .techstack {
   margin-top: 40px;
-  background: lighten($primary-color, 5);
+  background: lighten(config.$primary-color, 5);
   padding: 1rem;
   width: 100%;
   text-align: center;
@@ -126,13 +125,13 @@ main {
         position: absolute;
         transition: all 0.3s ease;
         opacity: 0;
-        background-color: $secondary-color;
+        background-color: config.$secondary-color;
       }
       .text {
         position: absolute;
         font-size: 1rem;
         padding: 0.5rem;
-        color: set-text-color($secondary-color);
+        color: config.set-text-color(config.$secondary-color);
       }
       .overlay-fade {
         height: 100%;
@@ -163,19 +162,19 @@ main {
       border: 0;
       margin-bottom: 0.3rem;
       &:hover {
-        background: $secondary-color;
-        color: set-text-color($secondary-color);
+        background: config.$secondary-color;
+        color: config.set-text-color(config.$secondary-color);
       }
     }
 
     .btn-dark {
       @extend .btn; //inheritence in sass
-      background: darken($primary-color, 50);
+      background: darken(config.$primary-color, 50);
       color: #fff;
     }
     .btn-light {
       @extend .btn;
-      background: lighten($primary-color, 50);
+      background: lighten(config.$primary-color, 50);
       color: #333;
     }
   }
@@ -199,9 +198,7 @@ main {
 #main-footer {
   text-align: center;
   padding: 1rem;
-  background: darken($primary-color, 10);
-  color: set-text-color($primary-color);
+  background: darken(config.$primary-color, 10);
+  color: config.set-text-color(config.$primary-color);
   width: 100%;
 }
-
-@import './mobile';
