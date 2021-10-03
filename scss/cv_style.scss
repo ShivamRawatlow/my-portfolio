@@ -9,8 +9,8 @@ $secondary_light: #081921;
 $primary_text: black;
 $secondary_text: white;
 
-// $cv_background: #1e3d59;
-$cv_background: $primary_color;
+$cv_background: #1e3d59;
+//$cv_background: $primary_color;
 $icon_color: lightblue;
 
 * {
@@ -33,11 +33,11 @@ body {
   width: 100%;
   max-width: 1000px;
   min-height: 100px;
-  background: $primary_color;
+  background: $primary_light_color;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 50px;
-  // box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 35px 55px rgba(0, 0, 0, 0.1);
   .left_side {
     position: relative;
     background-color: $primary_color;
