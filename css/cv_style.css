@@ -19,7 +19,7 @@ body {
   width: 100%;
   max-width: 1000px;
   min-height: 100px;
-  background: #003147;
+  background: lightblue;
   display: grid;
   grid-template-columns: 1fr 2fr;
   margin: 50px;
