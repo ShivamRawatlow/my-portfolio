@@ -1,3 +1,5 @@
+//install gulp cli and run command "gulp" in cmd
+
 const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 
